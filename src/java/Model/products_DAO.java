@@ -15,78 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class products_DAO {
-//    Connection cnn = null;
-//    PreparedStatement ps = null;
-//    
-//    public List<products> getAll () throws Exception {
-//        if (cnn == null){
-//            cnn = new dbConnect().getConnect();
-//        }
-//        String sql = "Select * from products";
-//        ps = cnn.prepareStatement(sql);
-//        ResultSet rs = ps.executeQuery();
-//        
-//        List<products> list = new ArrayList();
-//        while (rs.next()){
-//            products p = new products();
-//            p.setProduct_id(rs.getInt("product_id"));
-//            p.setProduct_name(rs.getString("product_name"));
-//            p.setPrice(rs.getDouble("price"));
-//            p.setDescription(rs.getString("description"));
-//            p.setImage(rs.getString("image"));
-//            p.setCategory_id(rs.getInt("category_id"));
-//            list.add(p);
-//        }
-//        return list;
-//    }
-//    
-//    public List<products> Search (String ten) throws Exception {
-//        if (cnn == null){
-//            cnn = new dbConnect().getConnect();
-//        }
-//        String sql = "Select * from products where product_name  Like ? ";
-//        ps = cnn.prepareStatement(sql);
-//        ps.setString(1, "%" + ten + "%");
-//        ResultSet rs = ps.executeQuery();
-//        
-//        List<products> list = new ArrayList();
-//        while (rs.next()){
-//            products p = new products();
-//            p.setProduct_id(rs.getInt("product_id"));
-//            p.setProduct_name(rs.getString("product_name"));
-//            p.setPrice(rs.getDouble("price"));
-//            p.setDescription(rs.getString("description"));
-//            p.setImage(rs.getString("image"));
-//            p.setCategory_id(rs.getInt("category_id"));
-//            list.add(p);
-//        }
-//        return list;
-//    }
-//    
-//    public products getByID (int ma) throws Exception {
-//        if (cnn == null){
-//            cnn = new dbConnect().getConnect();
-//        }
-//        String sql = "Select * from products where category_id = " + ma;
-//        ps = cnn.prepareStatement(sql);
-//        ResultSet rs = ps.executeQuery();
-//        
-//        List<products> list = new ArrayList();
-//        if (rs.next()){
-//            products p = new products();
-//            p.setProduct_id(rs.getInt("product_id"));
-//            p.setProduct_name(rs.getString("product_name"));
-//            p.setPrice(rs.getDouble("price"));
-//            p.setDescription(rs.getString("description"));
-//            p.setImage(rs.getString("image"));
-//            p.setCategory_id(rs.getInt("category_id"));
-//        
-//            
-//            return p;
-//        }
-//        return null;
-//    }
-    
+
     private static final String BASE_SQL =
         "SELECT p.product_id, p.product_name, p.price, p.description, " +
         "       p.image, p.category_id, c.category_name " +

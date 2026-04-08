@@ -267,9 +267,29 @@ p,a, span, strong, button, li,ul{
 
 /*==========Footer==========*/
 .footer{
+    display: flex;
     padding: 20px;
     font-size: 18px;
     background-color:#e5e7eb ;
-    text-align: center;
-    color: black;  
+    text-align: left;
+    color: black;    
+    font-family: "Montserrat", sans-serif;
+}
+
+.footer-info{
+    display: flex;
+    text-align: left;
+}
+
+.footer-logo {
+/*    margin-bottom: 20px;*/
+    margin-right: 30px;
+    margin-left: 1000px;
+    margin-top: 25px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+    opacity: 0.7; /*làm mờ ảnh từ 0 - 1 trong đó 1 là hiện rõ nhất*/
 }

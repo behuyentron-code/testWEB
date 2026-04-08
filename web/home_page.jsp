@@ -96,6 +96,9 @@
                     <button onclick="addToCart(<%= p.getProduct_id() %>, '<%= p.getProduct_name() %>')">
                         Thêm vào giỏ
                     </button>
+                        
+                    <button>  Xem thêm </button>    
+                        
                 </div>
             <% 
                     }
@@ -105,10 +108,17 @@
     </div>
 
     <footer class="footer">
-        <p>| Nhóm 3 |</p>
-        <p>| Lã Ngọc Huyền   | 29-08-2005 |</p>
-        <p>| Trần Anh Đức    | 11-11-2005 |</p>
-        <p>| Nguyễn Phi Long |</p>
+        <div>
+            <h3>Nhóm 3</h3>
+            <p>Lã Ngọc Huyền    | 29-08-2005 </p>
+            <p>Trần Anh Đức     | 11-11-2005 </p>
+            <p>Nguyễn Phi Long  | 14-06-2005 </p>
+        </div>
+        
+        <div class="footer-logo">
+            <img src="./images/logo.png">
+        </div>
+        
     </footer>
 
     <script>
