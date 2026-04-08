@@ -273,3 +273,112 @@ p,a, span, strong, button, li,ul{
     text-align: center;
     color: black;  
 }
+
+
+/* ===== MODAL OVERLAY ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(114, 104, 104, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(6px);
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+ 
+        /* ===== MODAL BOX ===== */
+        .modal-box {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 40px 36px 32px;
+            width: 100%;
+            max-width: 460px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: slideDown 0.25s ease;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to   { transform: translateY(0);     opacity: 1; }
+        }
+        .modal-box h2 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        
+        .modal-box input[type="text"],
+        .modal-box input[type="email"],
+        .modal-box input[type="password"] {
+            width: 100%;
+            padding: 12px 14px;
+            background: #2d2d2d;
+            border: 1px solid #3a3a3a;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 18px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .modal-box input:focus { border-color: #f57c00; }
+        .modal-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .modal-links { font-size: 13px; color: #aaa; }
+        .modal-links a { color: #aaa; text-decoration: none; transition: color 0.2s; }
+        .modal-links a:hover { color: #f57c00; }
+        .modal-links span { margin: 0 6px; }
+        .modal-btn-group { display: flex; gap: 10px; }
+        .btn-submit {
+            background: #f57c00; color: #fff; border: none;
+            border-radius: 6px; padding: 10px 24px;
+            font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover { background: #e06900; }
+        .btn-cancel {
+            background: #3a7bd5; color: #fff; border: none;
+            border-radius: 6px; padding: 10px 24px;
+            font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-cancel:hover { background: #2d6cc0; }
+        .modal-social {
+            display: flex; justify-content: center;
+            gap: 16px; margin-top: 22px;
+        }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            border: none; cursor: pointer; font-size: 18px; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.15s, opacity 0.15s;
+        }
+        .social-btn:hover { transform: scale(1.1); opacity: 0.9; }
+        .social-btn.fb { background: #1877f2; }
+        .social-btn.gg { background: #db4437; }
+        .modal-switch {
+            text-align: center; margin-top: 18px;
+            font-size: 13px; color: #888;
+        }
+
+        /* Giữ style giống <a> cho button nav */
+        .auth-buttons .btn-login,
+        .auth-buttons .btn-register {
+            cursor: pointer;
+            font-family: inherit;
+        }
