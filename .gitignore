@@ -1,1 +1,25 @@
+# --- NetBeans ---
+nbproject/private/
+nbbuild/
+build/
+nbdist/
+nb-configuration.xml
 
+# --- Java ---
+*.class
+*.jar
+*.war
+*.ear
+build/
+dist/
+target/
+
+# --- File hệ thống ---
+.DS_Store
+Thumbs.db
+
+# --- Cấu hình cá nhân ---
+*.log
+.settings/
+.classpath
+.project
