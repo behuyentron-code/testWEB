@@ -14,7 +14,7 @@
     color: white;
     background-color: #abab9c;
 
-/*    background-color: #432004;*/
+    /*    background-color: #432004;*/
     padding: 20px;
     text-align: center;
     font-size: 36px;
@@ -47,10 +47,10 @@ p,a, span, strong, button, li,ul{
     justify-content: space-between; /* Đẩy 2 cụm menu ra 2 đầu */
     align-items: center;
     padding: 0 50px;
-    
+
     margin-top: 20px;    /* Khoảng cách với Banner */
     margin-bottom: 20px; /* Khoảng cách với nội dung bên dưới/Footer */
- 
+
 }
 .top-menu a{
     display: inline-flex; /* Quan trọng để padding hoạt động chuẩn xuống dòng của banner */
@@ -59,7 +59,7 @@ p,a, span, strong, button, li,ul{
     text-decoration: none; /*loại bỏ các đường gạch trang trí mặc định trên văn bản.*/
     color: black;
 
-    border-right: 1px solid;  /*Tạo vách ngăn giữa các nút*/ 
+    border-right: 1px solid;  /*Tạo vách ngăn giữa các nút*/
     font-weight: bold;
     transition: 0.4s; /*tạo chuyển động mượt mà khi ấn xuống*/
 }
@@ -67,7 +67,7 @@ p,a, span, strong, button, li,ul{
 /*liên kết với cái transition */
 .top-menu a:hover{
     background-color: #d1d5dc;
-/*    color: white;*/
+    /*    color: white;*/
 }
 
 .top-menu a:last-child{
@@ -98,14 +98,14 @@ p,a, span, strong, button, li,ul{
     position: absolute;
     top: -5px;
     right: -5px;
-    
+
     background-color: #e74c3c;
     color: white;
     font-size: 12px;
     font-weight: bold;
     min-width: 20px;
     height: 20px;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,17 +133,17 @@ p,a, span, strong, button, li,ul{
     width: 20%;
     background-color: white;
     border-radius: 10px;
-/*    padding: 0;*/
+    /*    padding: 0;*/
     overflow: hidden; /* Để các góc bo của li không đè lên góc bo của menu cha */
-    box-shadow:0 2px 8px #d1d5dc; 
+    box-shadow:0 2px 8px #d1d5dc;
     align-self: flex-start; /* Giữ menu không bị kéo dài theo chiều cao của content */
-    
+
 }
 
 .left-menu h3{
     font-size: 22px;
     font-family: "Montserrat", sans-serif;
-    
+
     padding: 20px;
     margin: 0;
     background-color:#f8f9fa;
@@ -160,7 +160,7 @@ p,a, span, strong, button, li,ul{
     padding: 10px;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    
+
     cursor: pointer;
     transition: 0.4s;
 }
@@ -170,7 +170,7 @@ p,a, span, strong, button, li,ul{
 }
 
 .left-menu ul li:hover {
-/*    background-color: #d8d8d0;*/
+    /*    background-color: #d8d8d0;*/
     font-size: 18px;
     font-weight: 600;
     padding-left: 30px; /* Tạo hiệu ứng dịch chuyển sang phải */
@@ -183,7 +183,7 @@ p,a, span, strong, button, li,ul{
 }
 
 .left-menu ul li:hover::before {
-/*    color: white;*/
+    /*    color: white;*/
 }
 
 .container{
@@ -199,8 +199,8 @@ p,a, span, strong, button, li,ul{
     border-radius: 10px;
     padding: 20px;
     min-height: 400px;
-    box-shadow:0 2px 8px #d1d5dc; 
-    
+    box-shadow:0 2px 8px #d1d5dc;
+
     color: black;
     font-weight: 700;
     font-size: 18px;
@@ -215,23 +215,23 @@ p,a, span, strong, button, li,ul{
     overflow: hidden;
     text-align: center;
     transition: 0.3s;
-/*    border: 1px solid;*/
-  
+    /*    border: 1px solid;*/
+
 }
 
 .product img{
     width: 100%;
     height: 180px;
     object-fit: cover;
-    
+
 }
 .product:hover{
     transform: translateY(-8px);
-    box-shadow:0 2px 8px #d1d5dc; 
+    box-shadow:0 2px 8px #d1d5dc;
 }
 .product h4 {
     margin: 10px 0;
-    color: black; 
+    color: black;
     font-weight: 400;
 }
 
@@ -246,12 +246,12 @@ p,a, span, strong, button, li,ul{
     background-color: white;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
-    color: black;   
+    color: black;
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
-    
- 
+
+
 }
 
 .product button:hover{
@@ -271,7 +271,7 @@ p,a, span, strong, button, li,ul{
     font-size: 18px;
     background-color:#e5e7eb ;
     text-align: left;
-    color: black;    
+    color: black;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -281,7 +281,7 @@ p,a, span, strong, button, li,ul{
 }
 
 .footer-logo {
-/*    margin-bottom: 20px;*/
+    /*    margin-bottom: 20px;*/
     margin-right: 30px;
     margin-left: 1000px;
     margin-top: 25px;
@@ -296,109 +296,213 @@ p,a, span, strong, button, li,ul{
 
 
 /* ===== MODAL OVERLAY ===== */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(114, 104, 104, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(6px);
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
- 
-        /* ===== MODAL BOX ===== */
-        .modal-box {
-            background: #1e1e1e;
-            border-radius: 10px;
-            padding: 40px 36px 32px;
-            width: 100%;
-            max-width: 460px;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            animation: slideDown 0.25s ease;
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-30px); opacity: 0; }
-            to   { transform: translateY(0);     opacity: 1; }
-        }
-        .modal-box h2 {
-            text-align: center;
-            color: #ffffff;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 28px;
-        }
-        
-        .modal-box input[type="text"],
-        .modal-box input[type="email"],
-        .modal-box input[type="password"] {
-            width: 100%;
-            padding: 12px 14px;
-            background: #2d2d2d;
-            border: 1px solid #3a3a3a;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 15px;
-            margin-bottom: 18px;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
-            outline: none;
-        }
-        .modal-box input:focus { border-color: #f57c00; }
-        .modal-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 4px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .modal-links { font-size: 13px; color: #aaa; }
-        .modal-links a { color: #aaa; text-decoration: none; transition: color 0.2s; }
-        .modal-links a:hover { color: #f57c00; }
-        .modal-links span { margin: 0 6px; }
-        .modal-btn-group { display: flex; gap: 10px; }
-        .btn-submit {
-            background: #f57c00; color: #fff; border: none;
-            border-radius: 6px; padding: 10px 24px;
-            font-size: 14px; font-weight: 600; cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-submit:hover { background: #e06900; }
-        .btn-cancel {
-            background: #3a7bd5; color: #fff; border: none;
-            border-radius: 6px; padding: 10px 24px;
-            font-size: 14px; font-weight: 600; cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-cancel:hover { background: #2d6cc0; }
-        .modal-social {
-            display: flex; justify-content: center;
-            gap: 16px; margin-top: 22px;
-        }
-        .social-btn {
-            width: 42px; height: 42px; border-radius: 50%;
-            border: none; cursor: pointer; font-size: 18px; color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            transition: transform 0.15s, opacity 0.15s;
-        }
-        .social-btn:hover { transform: scale(1.1); opacity: 0.9; }
-        .social-btn.fb { background: #1877f2; }
-        .social-btn.gg { background: #db4437; }
-        .modal-switch {
-            text-align: center; margin-top: 18px;
-            font-size: 13px; color: #888;
-        }
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(114, 104, 104, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+.modal-overlay.active {
+    display: flex;
+}
 
-        /* Giữ style giống <a> cho button nav */
-        .auth-buttons .btn-login,
-        .auth-buttons .btn-register {
-            cursor: pointer;
-            font-family: inherit;
-        }
+/*         ===== MODAL BOX ===== */
+.modal-box {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 40px 36px 32px;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: slideDown 0.25s ease;
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to   {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.modal-box h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.modal-box input[type="text"],
+.modal-box input[type="email"],
+.modal-box input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    background: #2d2d2d;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    outline: none;
+}
+.modal-box input:focus {
+    border-color: #f57c00;
+}
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.modal-links {
+    font-size: 13px;
+    color: #aaa;
+}
+.modal-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.modal-links a:hover {
+    color: #f57c00;
+}
+.modal-links span {
+    margin: 0 6px;
+}
+.modal-btn-group {
+    display: flex;
+    gap: 10px;
+}
+.btn-submit {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-submit:hover {
+    background: #e06900;
+}
+.btn-cancel {
+    background: #3a7bd5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-cancel:hover {
+    background: #2d6cc0;
+}
+.modal-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 22px;
+}
+.social-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s, opacity 0.15s;
+}
+.social-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+.social-btn.fb {
+    background: #1877f2;
+}
+.social-btn.gg {
+    background: #db4437;
+}
+.modal-switch {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #888;
+}
+
+/*         Giữ style giống <a> cho button nav */
+.auth-buttons .btn-login,
+.auth-buttons .btn-register {
+    cursor: pointer;
+    font-family: inherit;
+}
+/* NỀN ĐEN MỜ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.7);
+
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* BOX LOGIN */
+.modal-content {
+    background: #ffffffe;
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* INPUT */
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #333;
+    border: none;
+    color: white;
+}
+
+/* BUTTON */
+.modal-content button {
+    padding: 10px 15px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+}
+
+/* NÚT ĐÓNG */
+.close {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+    color:#ffffff;
+}
