@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <header class="banner">
         DECOR LUXURY - NÂNG TẦM KHÔNG GIAN SỐNG
     </header>
