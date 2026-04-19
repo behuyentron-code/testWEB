@@ -1,3 +1,30 @@
+# --- NetBeans ---
+nbproject/private/
+nbbuild/
+build/
+nbdist/
+nb-configuration.xml
 
+<<<<<<< Upstream, based on origin/master
 /nbproject/private/
 /dist/
+=======
+# --- Java ---
+*.class
+*.jar
+*.war
+*.ear
+build/
+dist/
+target/
+
+# --- File hệ thống ---
+.DS_Store
+Thumbs.db
+
+# --- Cấu hình cá nhân ---
+*.log
+.settings/
+.classpath
+.project
+>>>>>>> df7430f Merge branch 'master' of https://github.com/behuyentron-code/testWEB
