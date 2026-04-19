@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>liên hệ </title>
-        <link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/style.css">
     </head>
     <body>
         <!-- Banner -->
@@ -56,20 +56,20 @@
         </div>
 
         <div class="box">
-            <h3>Contact support</h3>
-            <p>We’re here for you</p>
-            <button class="btn">CONTACT SUPPORT</button>
-        </div>
+    <h3>Contact support</h3>
+    <p id="support-text">We’re here for you</p>
+    <button class="btn" onclick="showPhone()">CONTACT SUPPORT</button>
+     </div>
 
         <!-- FORM -->
         <h2>Ask a question</h2>
 
         <form action="ContactServlet" method="post">
-    <input type="text" name="name" placeholder="Họ và tên" required>
-    <input type="email" name="email" placeholder="Email">
-    <input type="text" name="phone" placeholder="Phone">
-    <textarea name="message" placeholder="Nội dung"></textarea>
-    <button type="submit">GỬI</button>
+            <input type="text" name="name" placeholder="Họ và tên" required><br><br>
+    <input type="email" name="email" placeholder="Email"><br><br>
+    <input type="text" name="phone" placeholder="Phone"><br><br>
+    <textarea name="message" placeholder="Nội dung"></textarea><br><br>
+    <button type="submit">GỬI</button><br><br>
      </form>
 
     </div>
@@ -81,5 +81,16 @@
         <p>© 2026 - Website của bạn</p>
     </div>
 </div>
+<script>
+    function showPhone() {
+        let text = document.getElementById("support-text");
+
+        if (text.innerText === "We’re here for you") {
+            text.innerText = "Hotline: 01202340234";
+        } else {
+            text.innerText = "We’re here for you";
+        }
+    }
+</script>
     </body>
 </html>
