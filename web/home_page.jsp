@@ -5,6 +5,10 @@
 
 <!DOCTYPE html>
 <html>
+    <%
+    String user = (String) session.getAttribute("user");
+    %>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,18 +24,27 @@
     <nav class="top-menu">
         <div class="nav-links">
             <a href="${pageContext.request.contextPath}/hienthi">Trang Chủ</a>
-            <a href="#">Sản Phẩm</a>
+            <a href="${pageContext.request.contextPath}/productDetail">Chi Tiết Sản Phẩm</a>
             <a href="#">Khuyến Mãi</a>
             <a href="#">Liên Hệ</a>
         </div>
 
         <div class="auth-buttons">
-            <a href="#" class="cart-btn" onclick="return false;">
-                <i class="fa-solid fa-cart-shopping"></i>Giỏ hàng 
-                <span class="cart-count" id="cartCount">0</span>
+            <a href="cart.jsp" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng
+                <span class="cart-count" id="cartCount">
+                    <%= session.getAttribute("cartCount") != null ? session.getAttribute("cartCount") : 0 %>
+                </span>
             </a>
-            <a href="#" class="btn-login">Đăng Nhập</a>
-            <a href="#" class="btn-register">Đăng Ký</a>
+                
+           <% if(user != null){ %>
+                <span style="color:white;">Xin chào, <%= user %></span>
+                <a href="logout.jsp">Đăng xuất</a>
+            <% } else { %>
+                <a href="#" class="btn-login" onclick="openLogin()" >Đăng Nhập</a>
+                <a href="#" class="btn-register" onclick="openRegister()">Đăng Ký</a>
+            <% } %>
+            
         </div>
     </nav>
         
@@ -97,7 +110,7 @@
                         Thêm vào giỏ
                     </button>
                         
-                    <button>  Xem thêm </button>    
+                    <button onclick="location.href='${pageContext.request.contextPath}/productDetail?id=<%= p.getProduct_id() %>'">Xem thêm</button>    
                         
                 </div>
             <% 
@@ -121,13 +134,126 @@
         
     </footer>
 
-    <script>
-        let cartCount = 0;
-        function addToCart(id, name) {
-            cartCount++;
-            document.getElementById('cartCount').textContent = cartCount;
-            console.log("Added to cart: " + name + " (ID: " + id + ")");
-        }
-    </script>
+    <!-- ================= MODAL LOGIN ================= -->
+<!--    <form action="loginServlet" method="post">
+        <%
+            String loginError = (String) session.getAttribute("loginError");
+            if (loginError != null) {
+                session.removeAttribute("loginError"); // xóa sau khi hiển thị
+        %>
+            <p style="color: red;"><%= loginError %></p>
+        <% } %>
+        <input type="text" name="username" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mật khẩu" required>
+        <button type="submit" name="action" value="login">Đăng nhập</button>
+    </form>-->
+    
+<div id="loginModal" class="modal">
+    <div class="modal-box">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+
+        <h2>Đăng nhập</h2>
+
+        <form action="loginServlet" method="post">
+            <input type="text" name="username" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <button type="submit" name="action" value="login">Đăng nhập</button>
+        </form>
+
+        <p style="color: #ffffff">
+            
+                    <a href="#" style="color: #ffffff">Quên mật khẩu</a>
+                    <span>|</span>
+            <a href="#" onclick="switchModal('loginModal','registerModal')" style="color: #ffffff">Đăng ký</a>
+        </p>
+    </div>
+</div>
+
+<!-- ================= MODAL REGISTER ================= -->
+<div id="registerModal" class="modal">
+    <div class="modal-box">
+        <span class="close" onclick="closeModal('registerModal')">&times;</span>
+
+        <h2>Đăng ký</h2>
+
+        <form action="loginServlet" method="post">
+            <input type="text" name="username" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="password" name="password" placeholder="Nhập lại mật khẩu" required>
+
+            <button type="submit" name="action" value="register">Đăng ký</button>
+        </form>
+
+        <p style="color: #ffffff" >Đã có tài khoản?
+            <a href="#" onclick="switchModal('registerModal','loginModal')" style="color: #ffffff">Đăng nhập</a>
+        </p>
+    </div>
+</div>
+<!-- LOGIN MODAL -->
+<!--<div id="loginModal" class="modal-overlay">
+    <div class="modal-box">
+        <h2>Đăng nhập</h2>
+
+        <form action="loginServlet" method="post">
+            <input type="text" name="username" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+
+            <button type="submit" name="action" value="login">Đăng nhập</button>
+        </form>
+
+        <p>
+            <a href="#" onclick="switchModal('loginModal','registerModal')">Đăng ký</a>
+        </p>
+    </div>
+</div>-->
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="modal-overlay">
+    <div class="modal-box">
+        <h2>Đăng ký</h2>
+
+        <form action="loginServlet" method="post">
+            <input type="text" name="username" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+
+            <button type="submit" name="action" value="register">Đăng ký</button>
+        </form>
+
+        <p>
+            <a href="#" onclick="switchModal('registerModal','loginModal')">Đăng nhập</a>
+        </p>
+    </div>
+</div>
+
+<script>
+let cartCount = 0;
+function addToCart() {
+    cartCount++;
+    document.getElementById('cartCount').textContent = cartCount;
+}
+
+// ===== MODAL =====
+// Tự động mở modal nếu redirect về do lỗi
+const urlParams = new URLSearchParams(window.location.search);
+const openModal = urlParams.get("openModal");
+if (openModal === "login") openLogin();
+if (openModal === "register") openRegister();
+
+
+function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+function openRegister() {
+    document.getElementById("registerModal").style.display = "flex";
+}
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+function switchModal(closeId, openId) {
+    closeModal(closeId);
+    document.getElementById(openId).style.display = "flex";
+}
+</script>
+
 </body>
 </html>

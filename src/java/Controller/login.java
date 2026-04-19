@@ -6,11 +6,12 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -27,28 +28,44 @@ public class login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
 
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-        String action = request.getParameter("action");
+    String user = request.getParameter("username");
+    String pass = request.getParameter("password");
+    String action = request.getParameter("action");
 
-        HttpSession session = request.getSession();
+    HttpSession session = request.getSession();
 
-        if ("login".equals(action)) {
-            if ("admin".equals(user) && "123".equals(pass)) {
-                session.setAttribute("user", user);
-            }
-        }
-
-        if ("register".equals(action)) {
+    if ("login".equals(action)) {
+        if ("admin".equals(user) && "123".equals(pass)) {
+            // ✅ Đăng nhập đúng → lưu session, về trang chủ
             session.setAttribute("user", user);
+            response.sendRedirect("hienthi");  // về servlet hienthi để load sản phẩm
+            return;
+        } else {
+            // ❌ Đăng nhập sai → báo lỗi, mở lại modal
+            session.setAttribute("loginError", "Sai tài khoản hoặc mật khẩu!");
+            response.sendRedirect("hienthi?openModal=login");
+            return;
         }
-
-        // chuyển về trang chủ
-        response.sendRedirect("index.jsp");
     }
+
+    if ("register".equals(action)) {
+        if (user != null && !user.trim().isEmpty()) {
+            // ✅ Đăng ký thành công
+            session.setAttribute("user", user);
+            response.sendRedirect("hienthi");
+            return;
+        } else {
+            session.setAttribute("loginError", "Thông tin đăng ký không hợp lệ!");
+            response.sendRedirect("hienthi?openModal=register");
+            return;
+        }
+    }
+
+    response.sendRedirect("hienthi");
+}
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

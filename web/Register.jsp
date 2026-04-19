@@ -20,8 +20,6 @@
                 <!-- FORM THẬT -->
                 <form action="loginServlet" method="post" onsubmit="return validateForm()">
 
-
-
                     <label>Email</label>
                     <input type="text" name="username" id="regEmail" placeholder="Nhập email của bạn" required>
 
@@ -33,7 +31,7 @@
 
                     <div class="modal-actions">
                         <div class="modal-links">
-                            <a href="login.jsp">Đăng nhập</a>
+                            <a href="Login.jsp">Đăng nhập</a>
                         </div>
 
                         <div class="modal-btn-group">
