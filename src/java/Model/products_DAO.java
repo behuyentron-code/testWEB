@@ -34,6 +34,38 @@ public class products_DAO {
         return query(BASE_SQL + "WHERE c.category_name = ? ORDER BY p.product_id ASC", categoryName);
     }
  
+    /** Lấy 1 sản phẩm theo ID (dùng cho trang chi tiết) */
+    public products getProductById(int productId) {
+        String sql = BASE_SQL + "WHERE p.product_id = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            conn = new dbConnect().getConnect();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, productId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return new products(
+                    rs.getInt("product_id"),
+                    rs.getString("product_name"),
+                    rs.getDouble("price"),
+                    rs.getString("description"),
+                    rs.getString("image"),
+                    rs.getInt("category_id"),
+                    rs.getString("category_name")
+                );
+            }
+        } catch (Exception e) {
+            System.err.println("[products_DAO] getProductById error: " + e.getMessage());
+        } finally {
+            try { if (rs != null) rs.close(); } catch(Exception e) {}
+            try { if (ps != null) ps.close(); } catch(Exception e) {}
+            try { if (conn != null) conn.close(); } catch(Exception e) {}
+        }
+        return null;
+    }
+    
     /** Lấy danh sách tên tất cả danh mục */
     public List<String> getAllCategoryNames() {
         List<String> list = new ArrayList<>();
