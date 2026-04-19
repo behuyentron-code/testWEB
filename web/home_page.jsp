@@ -26,7 +26,8 @@
             <a href="${pageContext.request.contextPath}/hienthi">Trang Chủ</a>
             <a href="${pageContext.request.contextPath}/productDetail">Chi Tiết Sản Phẩm</a>
             <a href="#">Khuyến Mãi</a>
-            <a href="#">Liên Hệ</a>
+            <a href="lienhe.jsp">Liên hệ</a> 
+            
         </div>
 
         <div class="auth-buttons">

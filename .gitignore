@@ -5,10 +5,8 @@ build/
 nbdist/
 nb-configuration.xml
 
-<<<<<<< Upstream, based on origin/master
 /nbproject/private/
 /dist/
-=======
 # --- Java ---
 *.class
 *.jar
@@ -27,4 +25,6 @@ Thumbs.db
 .settings/
 .classpath
 .project
->>>>>>> df7430f Merge branch 'master' of https://github.com/behuyentron-code/testWEB
+=======
+/build/
+

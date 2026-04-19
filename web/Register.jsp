@@ -44,15 +44,6 @@
 
                 </form>
 
-                <!-- SOCIAL -->
-                <div class="modal-social">
-                    <button class="social-btn fb">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </button>
-                    <button class="social-btn gg">
-                        <i class="fa-brands fa-google"></i>
-                    </button>
-                </div>
 
             </div>
         </div>

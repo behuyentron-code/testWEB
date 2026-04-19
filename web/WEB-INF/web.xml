@@ -15,6 +15,8 @@
     <servlet>
         <servlet-name>AddToCart</servlet-name>
         <servlet-class>Controller.AddToCart</servlet-class>
+        <servlet-name>ContactServlet</servlet-name>
+        <servlet-class>Controller.ContactServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>hienthi</servlet-name>
@@ -34,6 +36,10 @@
     <servlet-mapping>
         <servlet-name>AddToCart</servlet-name>
         <url-pattern>/AddToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContactServlet</servlet-name>
+        <url-pattern>/ContactServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
